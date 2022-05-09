@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MemberRegistSkin.html</title>
+    <style>
+        *{
+            font-size: 13px;
+        }
+        span{
+            color: rgb(164, 164, 164); font-size: 12px;
+        }
+        input{
+            margin: 5px;
+            border: rgb(202, 202, 202) solid 1px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="width:720px;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;
+		<span style="color: red;">*</span> 필수 입력
+    <table style="background-color:rgb(202, 202, 202); width:730px; border-spacing:1px;">
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>아이디</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="userid" minlength="4" maxlength="15" size="15">
+                    <input type="submit" value="중복확인" style="background-color: rgb(71, 71, 71); width: 70px; height: 22px; color: white; border: 1px; border-radius: 3px 3px 3px 3px">
+                    <span>* 4~15자, 첫 영문자, 영문자와 숫자 조합</span>
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>비밀번호</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="password" name="password1" size="11">
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>비밀번호확인</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="password" name="password2" size="11">
+                    <span>(확인을 위해 다시 입력해주세요.)</span>
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>이름</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="username" size="15">
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;생년월일</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="radio" name="gender" value="M" checked style="height: 12px;">남자
+                    <input type="radio" name="gender" value="W" style="height: 12px;">여자
+                    <input type="text" name="year" size="4">년 
+                    <input type="text" name="month" size="2">월 
+                    <input type="text" name="day" size="2">일
+                    <span>(예, 2000년 01월 31일)</span>
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td rowspan="2" style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>이메일</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="email" size="11"> @ <input type="text" name="email" value="gmail.com" size="11">
+                    <select name="grade2" style="height: 24px; border: rgb(202, 202, 202) solid 1px;">
+                        <option value="ele2" selected >gmail.com</option>
+                        <option value="mid2">naver.com</option>
+                        <option value="high2">daum.com</option>
+                        <option value="uni2">hanmail.net</option>
+                    </select>
+                    <input type="radio" name="ok" value="ok" style="height: 12px;" >수신허용
+			        <input type="radio" name="no" value="no" checked style="height: 12px;">수신불가
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <!-- <td style="background-color:rgb(182, 182, 182);"></td> -->
+            <td style="background-color:white;">
+                <span>※hanmail.net은 메일 수신이 어려울 수 있으니 가급적 다른 메일을 이용하시기 바랍니다.</span>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td rowspan="3" style="background-color:rgb(222, 222, 222); font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;주소</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="submit" value="주소찾기" style="background-color: rgb(71, 71, 71);  width: 70px; height: 22px; color: white; border: 1px; border-radius: 3px 3px 3px 3px">
+                    <input type="text" name="email"> (우편번호)
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <!-- <td style="background-color:rgb(182, 182, 182);"></td> -->
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="email" size="75">
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <!-- <td style="background-color:rgb(182, 182, 182);"></td> -->
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="email" size="60"> * 나머지 주소
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">&nbsp;&nbsp;&nbsp;&nbsp;전화번호</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="homenumber" size="1">
+                    <span> - </span>
+                    <input type="text" name="homenumber" size="3">
+                    <span> - </span>
+                    <input type="text" name="homenumber" size="3">
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>휴대전화</td>
+            <td style="background-color:white;">
+                <form>
+                    <input type="text" name="phonenumber" size="1">
+                    <span> - </span>
+                    <input type="text" name="phonenumber" size="3">
+                    <span> - </span>
+                    <input type="text" name="phonenumber" size="3">
+                    <input type="radio" name="ok" value="ok" checked style="height: 12px;">SMS 수신허용
+			        <input type="radio" name="no" value="no" style="height: 12px;" >SMS 수신불가
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>관심분야</td>
+            <td style="background-color:white;">
+                <form>
+                    <select name="grade1">
+                        <option value="ele1" selected >:: 관심분야 선택 ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="mid1">유튜브</option>
+                        <option value="high1">인스타그램</option>
+                        <option value="uni1">트위터</option>
+                    </select>	
+                </form>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="background-color:rgb(222, 222, 222); font-weight:bold;">
+                <span style="color: red;">&nbsp; * </span>가입경로</td>
+            <td style="background-color:white;">
+                <form>
+                    <select name="grade2">
+                        <option value="ele2" selected>:: 가입경로 선택 ::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+                        <option value="mid2">유튜브</option>
+                        <option value="high2">카페</option>
+                        <option value="uni2">친구추천</option>
+                    </select>	
+                </form>
+            </td>
+        </tr>
+    </table>
+    <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="등록하기" style="font-weight:bold; background-color: red; width: 150px; height: 30px; color: white; border: 1px; border-radius: 10px 10px 10px 10px">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="새로쓰기" style="font-weight:bold; background-color: rgb(79, 79, 79); width: 150px; height: 30px; color: white; border: 1px; border-radius: 10px 10px 10px 10px">
+</fieldset>
+  
+    <!-- 테이블태그로 전체적인 틀만들기
+    rowspan 으로 합쳐서 주소셀 합치기
+    input 타입의 text password radio sellect 태그 사용
+    input 태그에 백그라운드 컬러를 지정하고 컬러는 화이트로 지정하면
+    버튼 생성가능
+    모양최대한 비슷하고 색깔최대한 비슷하게 -->
+</body>
+</html>
