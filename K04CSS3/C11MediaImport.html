@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C11MediaImport.html</title>
+    <style>
+        /* 
+        @import
+        -<link> 태그를 대체할 수 있다.
+        -style태그안에서 사용해야 하고 반드시 최상단에 선언해야한다.
+        -css파일에 오류가 있는 경우 다운로드 하지 않는다.
+        */
+        @import url('./style/import.css');
+        .content{
+            background-color: black; color: red;
+        }
+        /* 
+        @media
+        -해당 웹페이지를 디바이스의 종류에 따라 각각 다르게 화면을 구성할 수
+        있도록 해준다.
+        -스크린(모니터)용과 프린터(출력물)용으로 구분할 수 있다.
+        */
+        /* 모니터에서는 검정색 배경에 흰색글씨로 표현된다. */
+        @media screen{
+            .content{
+                background-color: black; color: white;
+            }
+        }
+        /* 프린트할때는 빨간 바탕에 노란글씨로 표현된다. */
+        @media print{
+            .content{
+                background-color:red; color:yellow;
+            }
+        }
+        /* 
+        모든 웹브라우저는 배경색 출력을 허용하지 않는것이 디폴트 설정이다. 따라서
+        이를 허용하려면 인쇄설정에서 "배경색인쇄"를 체크해야 한다.
+        */
+    </style>
+</head>
+<body>
+    <h2>media 속성</h2>
+    <div class="content">
+        <p>
+            <h3>'HERE WE GO' 맨시티, 홀란드 영입…2027년까지 계약 확정</h3>
+            <br><br>
+            [스포티비뉴스=박대성 기자] 맨체스터 시티가 엘링 홀란드를 품었다. 5년 계약에
+             곧 메디컬 테스트를 진행한다.
+            <br><br>
+            유럽축구전문가 '파브리지오 로마노'는 10일(한국시간) "홀란드가 맨체스터 시티 메디컬
+            테스트를 앞두고 있다. 새로운 맨체스터 시티 공격수가 된다. 이번 주에 공식 발표가 있을
+            예정이다. 계약 기간은 2027년까지"라며, 영입 확정을 알린 'HERE WE GO'를 띄웠다.
+            <br><br>
+            맨체스터 시티는 지난 두 시즌 동안 9번 스트라이커를 영입하지 못했다. 세르히오 아구에로와
+            아름다운 작별을 한 뒤에 해리 케인 등에게 접근했지만 실패했다. 지난해 여름에 케인에게
+            강한 러브콜을 보냈는데, 토트넘 다니엘 레비 회장의 판매 불가 선언으로 물거품이 됐다.
+            <br><br>
+            이번에는 홀란드에게 러브콜을 보냈다. 홀란드는 킬리앙 음바페와 차세대 리오넬 메시,
+            크리스티아누 호날두 구도를 만들 수 있다. 1000억 원이 훌쩍 넘는 시장 가치를 가지고
+            있지만, 여름에 바이아웃 조항이 있다. 도르트문트에 7500만 유로(약 996억 원)를 지불하면
+            영입할 수 있다. 구단간 협상을 건너뛰고 개인 협상이 가능했다.
+            <br><br>
+            레알 마드리드, 바르셀로나와 연결되기도 했지만 최종 승자는 맨체스터 시티였다.
+            영국 매체 '타임즈'는 지난 20일 "홀란드가 맨체스터 시티에 가고 싶다고 말했다
+            (Erling Haaland tells Manchester City he wants to join them). 맨체스터 시티도
+            홀란드 영입을 마무리하길 원한다"며 알리기도 했다.
+        </p>
+    </div>
+    
+</body>
+</html>
