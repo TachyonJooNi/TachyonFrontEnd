@@ -5,8 +5,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MemberFindSkin.html</title>
+<style>
+    fieldset{
+        margin: 0 auto; padding: 0;
+    }
+    table{
+        margin: 0 auto; border-spacing: 15px;
+        font-size: 13px; font-weight: bold;
+        color: dimgray;
+    }
+    span{
+        color: red; font-size: 17px;
+    }
+    .topdiv{
+        font-size: 13px; font-weight: bold;
+        color: dimgray; padding: 10px;
+        width: 700px;  margin: 0 auto;
+        word-spacing: 2px;
+    }
+    .botdiv{
+        color: gray; font-size: 12px;
+        text-align: center; margin-top: 50px;
+        margin-bottom: 10px;
+    }
+    .dotdiv{
+        border-top: 1px silver dotted; width: 370px;
+        margin: 0 auto;
+    }
+    .outBox{
+        border-top: 5px solid gainsboro; border-left: 5px solid gainsboro;
+        border-bottom: 5px solid silver; border-right: 5px solid silver;
+        width: 700px;
+    }
+    .inBox{
+        border-top: 5px solid silver; border-left: 5px solid silver; 
+        border-bottom: 5px solid gainsboro; border-right: 5px solid gainsboro;
+        padding: 30px;
+    }
+    .box{
+        border: 1px solid rgb(220, 220, 220);
+        height: 22px;
+    }
+</style>
 </head>
 <body>
+    <div class="topdiv">
+        <input type="radio" name="id" value="id" checked>아이디 찾기&nbsp;&nbsp;
+        <input type="radio" name="password" value="password">비밀번호 찾기
+    </div>
+    <fieldset class="outBox"><fieldset class="inBox">
+        <table>
+            <tr>
+                <td><span>&gt</span>
+                    이름(대표자명)
+                </td>
+                <td>
+                    <input class="box" type="text" name="name" size="35">
+                </td>
+            </tr>
+            <tr>
+                <td><span>&gt</span> 
+                    <select class="box" name="select">
+                        <option value="phone" selected>휴대전화</option>
+                        <option value="email">이메일</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="box" type="text" name="number" size="1"> - 
+                    <input class="box" type="text" name="number" size="3"> - 
+                    <input class="box" type="text" name="number" size="3">
+                </td>
+            </tr>
+        </table>    
+        <div class="dotdiv">
+        </div>
+        <div class="botdiv">
+            아이디를 찾기 위해서 이름과 휴대번호 혹은 이메일을 입력하세요.
+        </div>
+    </fieldset></fieldset>
+    <br><br><br><br><br>
+
+
+
+
     
+    <div class="topdiv">
+        <input type="radio" name="id" value="id">아이디 찾기&nbsp;&nbsp;
+        <input type="radio" name="password" value="password" checked>비밀번호 찾기
+    </div>
+    <fieldset class="outBox"><fieldset class="inBox">
+        <table>
+            <tr>
+                <td><span>&gt</span>
+                    아이디
+                </td>
+                <td>
+                    <input class="box" type="text" name="name" size="35">
+                </td>
+            </tr>
+            <tr>
+                <td><span>&gt</span>
+                    이름(대표자명)
+                </td>
+                <td>
+                    <input class="box" type="text" name="name" size="35">
+                </td>
+            </tr>
+            <tr>
+                <td><span>&gt</span> 
+                    <select class="box" name="select">
+                        <option value="phone">휴대전화</option>
+                        <option value="email" selected>이메일</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="box" type="text" name="number" size="10"> @ 
+                    <input class="box" type="text" name="number" size="10">
+                    <select class="box" name="select">
+                        <option value="email" selected>직접입력</option>
+                        <option value="naver">naver.com</option>
+                    </select>
+                </td>
+            </tr>
+        </table>    
+        <div class="dotdiv">
+        </div>
+        <div class="botdiv">
+            비밀번호를 찾기 위해서 아이디, 이름과 휴대번호 혹은 이메일을 입력하세요.
+        </div>
+    </fieldset></fieldset>
 </body>
 </html>
