@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu04.html</title>
+    <script>
+        /*
+        문제04] 그림과 같은 결과화면이 출력되도록 document.write()와 
+        for문을 이용하여 <script>태그안에 코드를 삽입하시오.
+        */
+        document.write("<h2>document.write()로 표만들기</h2><hr>");
+
+        var strsquar = "<table border='1'>";
+            for(var x=1 ; x<=2 ; x++) {
+                strsquar += "<tr>";
+                if(x==1) strsquar += "<td><b>n</b></td>";
+                else strsquar += "<td><b> n <sup>"+x+"</sup> </b></td>";
+
+                for(var y=0; y<=9 ; y++) {
+                    strsquar += "<td>" + y**x +"</td>";
+                }
+                strsquar += "</tr>";
+            }
+            strsquar += "</table>";
+
+            document.write(strsquar);
+    </script>
+</head>
+<body>
+</body>
+</html>

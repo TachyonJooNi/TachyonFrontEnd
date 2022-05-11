@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu05.html</title>
+    <script>
+        /*
+        문제05] prompt() 함수를 이용하여 월,화,수,목,금,토,일 중 하나를 입력받아
+         월~목의 경우 “출근” 나머지는 “휴일”을 출력하는 프로그램을 작성하시오.
+        */
+       var strday = prompt("월화수목금토일 중에서 입력하세요.");
+
+       document.write("<h2>월화수목금토일</h2><hr>");
+       switch(strday){
+            case "월": case "화": case "수": case "목": 
+                document.write(strday+"는 출근");
+                break;
+            case "금": case "토": case "일":
+                document.write(strday+"는 휴일");
+                break;
+            default :
+                document.write("잘못입력하셨습니다.");   
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
