@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu09.html</title>
+    <!-- 문제09]  1에서 100사이의 난수(100포함) 10개를 생성하여 plots 
+        이름의 배열에 저장하고 배열에 저장된 수 중 가장 큰 수를 출력하는 
+        프로그램을 작성하시오. -->
+    <script>
+
+        var setOrdering = function(arr){
+            for(var i=0 ; i<arr.length-1 ; i++) {
+                for(var j=0 ; j<(arr.length-1)-i ; j++) {
+                    if(arr[j] > arr[j+1]) {
+                        temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }					
+                }
+            }
+        }
+    
+        function getplots() {
+            var plotsStr = "";
+            var plots = [0,0,0,0,0,0,0,0,0,0];
+            var index = 0;
+            var flag = false;
+            while(index<10){
+                var randomNum = parseInt(Math.random()*100) + 1;
+                
+                for(var i=0; i<plots.length ; i++){
+                    if(plots[i]==randomNum){
+                        flag = true;
+                    }
+                }
+                if(flag==true){
+                    flag = false;
+                    continue;
+                }
+                else{
+                    plots[index++] = randomNum;
+                }
+            }
+            setOrdering(plots);
+    
+            for(var i=0 ; i<plots.length ; i++){
+                plotsStr += plots[i] +"&nbsp;";
+            }
+            document.getElementById("plotsNumber").innerHTML = plotsStr;
+        }
+    </script>
+</head>
+<body>
+    <h2>난수 10개 생성</h2>
+    getplots();
+    <br>
+    <span id="plotsNumber">
+    </span>
+</body>
+</html>
+
