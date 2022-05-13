@@ -7,6 +7,34 @@
     <title>Qu10.html</title>
     <!-- 문제10] prompt() 함수를 반복 호출하여 정수 5개를 입력받아
          입력된 반대순으로 출력하는 프로그램을 작성하시오. -->
+    <script>
+        document.write("<h2>정수 5개 입력받아 역순으로 출력</h2><hr>");
+        var arr = new Array(5);
+        var arrStr = "";
+
+        for(var i=0; i<arr.length; i++){
+            arr[i] = prompt();
+            arrStr += arr[i]+"&nbsp;";
+        }
+        document.write("입력한 수의 배열<br>");
+        document.write(arrStr+"<hr>");
+
+        var arr2 = new Array();
+        arrStr = "";
+
+        for(var i=0; i<arr.length; i++){
+            arr2[i] = arr[arr.length-(i+1)];
+        }
+        
+        for(var i=0; i<arr2.length; i++){
+            arrStr += arr2[i]+"&nbsp;";
+        }
+        document.write("역순으로 재정렬된 배열<br>");
+        document.write(arrStr);
+
+
+
+    </script>
 </head>
 <body>
     

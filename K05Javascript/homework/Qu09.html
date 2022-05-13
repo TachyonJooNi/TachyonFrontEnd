@@ -10,16 +10,15 @@
         프로그램을 작성하시오. -->
     <script>
 
-        var setOrdering = function(arr){
-            for(var i=0 ; i<arr.length-1 ; i++) {
-                for(var j=0 ; j<(arr.length-1)-i ; j++) {
-                    if(arr[j] > arr[j+1]) {
-                        temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j+1] = temp;
-                    }					
+        var findMax = function(arr){
+            for(var i=1 ; i<arr.length ; i++) {
+                if(arr[0]<arr[i]) {
+                    temp = arr[i];
+                    arr[i] = arr[0];
+                    arr[0] = temp;
                 }
             }
+            return arr[0];
         }
     
         function getplots() {
@@ -43,21 +42,19 @@
                     plots[index++] = randomNum;
                 }
             }
-            setOrdering(plots);
-    
             for(var i=0 ; i<plots.length ; i++){
                 plotsStr += plots[i] +"&nbsp;";
             }
-            document.getElementById("plotsNumber").innerHTML = plotsStr;
+            document.write("<h2>난수 10개 생성</h2><hr>");
+            document.write(plotsStr+"<br><hr>");
+            document.write("가장큰수는?"+ findMax(plots) +"<hr>"); 
         }
+        getplots();
+
     </script>
 </head>
 <body>
-    <h2>난수 10개 생성</h2>
-    getplots();
-    <br>
-    <span id="plotsNumber">
-    </span>
+
 </body>
 </html>
 

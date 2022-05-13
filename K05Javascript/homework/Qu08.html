@@ -14,19 +14,17 @@
             var num = parseInt(num1);
 
             document.write("<h2>숫자의 첫째자리와 마지막자리가 같은지 비교</h2><hr>");
-            
             var lastNum = num % 10;//숫자의 마지막자리 구함
-            document.write(lastNum+"=> 처음과 끝이 같음");
-            while(num<10){
+            
+            while(num>10){
                 num = Math.floor(num / 10); // Math.floor(5678/10) = 567
             }
-            document.write(num+"=> 처음과 끝이 같음");
-            // if(lastNum==num){
-            //     document.write(num1+"=> 처음과 끝이 같음");
-            // }
-            // else{
-            //     document.write(num1+"=> 처음과 끝이 다름");
-            // }
+            if(lastNum==num){
+                document.write(num1+"=> 처음과 끝이 같음");
+            }
+            else{
+                document.write(num1+"=> 처음과 끝이 다름");
+            }
             
         </script>
 </head>
