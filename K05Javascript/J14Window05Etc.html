@@ -24,7 +24,8 @@
         document.write("alert('나는 alert함수다)';");
         eval("alert('나는 alert함수다. eval()안에 있다.');");//경고창 띄워짐
         document.write("<br>1+2+3<br>");//1+2+3이 그대로 출력됨
-        document.write(eval("1+2+3"));//실제 연산이 되어 6이 출력된다.
+        var str = "1+2+3";
+        document.write(eval(str));//실제 연산이 되어 6이 출력된다.
         // document.write(eval("일+2+3")); ==> 에러가 발생하므로 뒷부분이 실행되지 않는다.
 
 		/*
