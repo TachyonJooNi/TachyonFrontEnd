@@ -5,8 +5,156 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalculatorVer01.html</title>
+    <style>
+        table{
+            border: 1px solid #c7c7c7;
+            background-color: #dddddd;
+            border-radius: 10px;
+        }
+        input, button {
+            border: 1px solid #dddddd;
+            border-radius: 10px;height: 50px;
+            font-size: 1.5em; color: #ffffff;
+        }
+        input.key_type1{
+            background-color: #7b7b7b; width: 204px;
+        }
+        button.key_type2{
+            background-color: #373737; width: 100px;
+        }
+        button.key_type3{
+            background-color: #FA960A; width: 100px;
+        }
+        #lcd{
+            background-color: #70C738;font-size: 40px;
+            color: #373737;font-weight: bold;
+            text-align: right;border-radius: 10px;
+            padding: 10px;
+        }        
+    </style>
+    <script>
+        // LCD 패널에 정상적인 수학식 검증 후 출력하는 함수
+        function inputNum(num){
+            var greenScreen = document.getElementById("lcd").innerHTML;
+            var lastStr = greenScreen.charAt(greenScreen.length-1);
+            var splitArr = greenScreen.split(/[+,-,×,÷]/);
+
+            //초기값 0이 있는 상태에서 .(점)사용시 0.숫자로 출력
+            if(greenScreen=="0" && num=='.'){
+                //아래 조건문과 겹치므로 따로 더해준후 바로 탈출한다.
+                document.getElementById("lcd").innerHTML += num;
+                return;
+            }
+
+            //초기값 0이 붙어서 다른 버튼입력시 0356 처럼 출력되지 않게 빈칸으로 초기화
+            else if(greenScreen=="0"){
+                document.getElementById("lcd").innerHTML = "";
+            }
+
+            //사칙연산이 패널의 마지막에 있는 상태에서 .(점)누를시 0.으로 나오도록 수정
+            else if((lastStr=='-' || lastStr=='+' || lastStr=='×' || lastStr=='÷') && (num=='.')) {
+                document.getElementById("lcd").innerHTML += "0.";
+                return;
+            }
+
+            //사칙연산과 점을 2개 연속사용시 뒤에 누른것을 출력
+            else if((lastStr=='-' || lastStr=='+' || lastStr=='×' || lastStr=='÷' || lastStr=='.') && (num=='-' || num=='+' || num=='×' || num=='÷' || num=='.')) {
+                document.getElementById("lcd").innerHTML = greenScreen.substring(0, greenScreen.length-1);
+            }
+
+            //하나의 숫자구성에서 점(.)을 두개이상 넣을 수 없도록 함.
+            else if(!(splitArr[splitArr.length-1].indexOf('.')==-1) && (num=='.')){
+                return;
+            }
+
+            //입력한 값을 패널의 문자열에 더함.
+            document.getElementById("lcd").innerHTML += num;
+        }
+
+        // LCD패널을 초기화해주는 함수
+        function clearScreen(){
+            document.getElementById("lcd").innerHTML = "0";
+        }
+        
+        // = 버튼을 누르면 LCD패널의 수학식을 계산해주는 함수
+        function resultScreen() {
+            var greenScreen = document.getElementById("lcd").innerHTML;
+
+            // 시각적으로 좋게 보이기 위해 사용한 '×','÷' 을 자바스크립트가 계산가능한 *,/ 로 바꿔준다.
+            greenScreen = greenScreen.replaceAll('×', '*');
+            greenScreen = greenScreen.replaceAll('÷', '/');
+
+            var arithmetic = eval(greenScreen);
+
+            document.getElementById("lcd").innerHTML = arithmetic;
+        }
+
+        // LCD패널에 있는 문자열을 하나씩 지워주는 함수
+        function backScreen() {
+            var greenScreen = document.getElementById("lcd").innerHTML;
+
+            document.getElementById("lcd").innerHTML = greenScreen.substring(0, greenScreen.length-1);
+
+            if(document.getElementById("lcd").innerHTML==""){
+                document.getElementById("lcd").innerHTML = '0';
+            }
+        }
+    </script>
 </head>
 <body>
-    
+    <!-- table>tr*3>td*4 -->
+    <table border="0" align="center">
+        <tr>
+            <td colspan="4">
+                <div style="width: 410px;overflow: hidden;">
+                    <div id="lcd">0</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" value="Backspace" class="key_type1" onclick="backScreen()"></td>
+            <td colspan="2"><input type="button" value="C" class="key_type1" onclick="clearScreen()"></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(1)">1</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(2)">2</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(3)">3</button></td>
+            <td><button type="button" class="key_type3"
+                onclick="inputNum('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(4)">4</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(5)">5</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(6)">6</button></td>
+            <td><button type="button" class="key_type3"
+                onclick="inputNum('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(7)">7</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(8)">8</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(9)">9</button></td>
+            <td><button type="button" class="key_type3"
+                onclick="inputNum('×')">×</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="key_type2" 
+                onclick="resultScreen()">=</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum(0)">0</button></td>
+            <td><button type="button" class="key_type2" 
+                onclick="inputNum('.')">.</button></td>
+            <td><button type="button" class="key_type3"
+                onclick="inputNum('÷')">÷</button></td>
+        </tr>
+    </table>
 </body>
 </html>
