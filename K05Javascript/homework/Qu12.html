@@ -19,14 +19,14 @@
         (names.sort() 를 사용하면 오름차순으로 정렬됨)
     -->
     <script>
-        var names = new Array("wonsun", "jaemoonlee", "kitae", "gracehwang");
+        var names = new Array("wonsun", "jaemoonlee", "gaacehwang", "gracehwang");
         
         function printArr(arr1) {
-            var arrStr1 = "";
+            document.write("이름 : ");
             for(var i=0; i<arr1.length; i++){
-                arrStr1 += arr1[i]+"&nbsp;";
+                document.write(arr1[i]+"&nbsp;");
             }
-            document.write("이름 : "+arrStr1+"<br>");
+            document.write("<br>");
         }
         
         function longArr(arr2) {
@@ -39,22 +39,27 @@
         }
         
         function orderArr(arr3) {
+            var standard = arr3[0];
             for(var i=1; i<arr3.length; i++){
-                if(arr3[0].charCodeAt(0)>arr3[i].charCodeAt(0)){
-                    var tmp = arr3[0];
-                    arr3[0] = arr3[i];
-                    arr3[i] = tmp;
+                //방법1 : 그냥 크기 비교해도 알파벳 사전순으로 비교됨.
+                if(names[i]<standard){
+                    standard = names[i];
                 }
+                //방법2 : 첫번째 자리의 유니코드로만 비교
+                // if(arr3[0].charCodeAt(0)>arr3[i].charCodeAt(0)){
+                //     var tmp = arr3[0];
+                //     arr3[0] = arr3[i];
+                //     arr3[i] = tmp;
+                // }
             }
-            document.write("가장 먼저 나오는 이름 : "+ arr3[0] +"<br>");
+            document.write("가장 먼저 나오는 이름 : "+ standard +"<br>");
         }
 
         function sortArr(arr4) {
-            var arrStr2 = "";
+            document.write("증가순 이름 : ");
             for(var i=0; i<arr4.length; i++){
-                arrStr2 += arr4.sort()[i]+"&nbsp;";
+                document.write(arr4.sort()[i]+"&nbsp;");
             }
-            document.write("가장 먼저 나오는 이름 : "+ arrStr2 +"<br>");
         }
 
         

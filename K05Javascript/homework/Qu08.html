@@ -10,20 +10,20 @@
         (다음과 같이 10으로 나눈 후 버림처리하면 마지막 한자리를 버릴수 있다. 이를 반복하면 
         첫번째 자리수를 구할 수 있다) -->
         <script>
-            var num1 = prompt("숫자를 입력하세요");
-            var num = parseInt(num1);
+            var numStr = prompt("숫자를 입력하세요");
+            var num = parseInt(numStr);
 
             document.write("<h2>숫자의 첫째자리와 마지막자리가 같은지 비교</h2><hr>");
             var lastNum = num % 10;//숫자의 마지막자리 구함
             
-            while(num>10){
+            while(num>=10){
                 num = Math.floor(num / 10); // Math.floor(5678/10) = 567
             }
             if(lastNum==num){
-                document.write(num1+"=> 처음과 끝이 같음");
+                document.write(numStr+"=> 처음과 끝이 같음");
             }
             else{
-                document.write(num1+"=> 처음과 끝이 다름");
+                document.write(numStr+"=> 처음과 끝이 다름");
             }
             
         </script>
