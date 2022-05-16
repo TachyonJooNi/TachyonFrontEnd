@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu13.html</title>
+    <!-- 
+        문제13] 다음 쿼리스트링을 &문자를 기준으로 분할하여 출력하는 프로그램을 작성하시오.
+        파일명 : Qu13.html
+        예) ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동
+    -->
+    <script>
+        var strArr = prompt("문자열 입력","ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동");
+        var splitArr = strArr.split('&');
+        for(var i=0; i<splitArr.length; i++){
+            document.write(splitArr[i]+"<br>") ;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
