@@ -11,10 +11,10 @@
         예) ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동
     -->
     <script>
-        var strArr = prompt("문자열 입력","ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동");
-        var splitArr = strArr.split('&');
+        var str = prompt("문자열 입력","ki_story.html?mode=view&tname=interview&idx=520&page=1&keyfield=name&keystring=홍길동");
+        var splitArr = str.split('&');
         for(var i=0; i<splitArr.length; i++){
-            document.write(splitArr[i]+"<br>") ;
+            document.write(splitArr[i]+"<br>");
         }
     </script>
 </head>

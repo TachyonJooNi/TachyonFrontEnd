@@ -12,9 +12,28 @@
          "fuchsia", "white", "lime", "green", "navy", "blue", "aqua", "teal",
           "black", "silver", "gray", "lightskyblue"];
      -->
-     <script></script>
+    <script>
+        var colorNames = ["maroon", "red", "orange", "yellow", "olive", "purple","fuchsia", "white", 
+        "lime", "green", "navy", "blue", "aqua", "teal","black", "silver", "gray", "lightskyblue"];
+        var count = 0;
+        
+        for(var i=0; i<colorNames.length; i++){
+            document.write("<div class='div'>"+ colorNames[i] + "</div>");
+            count++;
+            if(count>4){
+                document.write("<div style='clear:both;'></div>");
+                count = 0;
+            }
+            document.getElementsByClassName('div')[i].style.backgroundColor = colorNames[i];
+        }
+        </script>
+        
+        <style>
+            .div{
+                float:left; width:80px; height: 20px; padding: 20px; 
+            }
+        </style>
 </head>
 <body>
-    
 </body>
 </html>
