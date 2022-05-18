@@ -30,22 +30,11 @@
         <!-- 체크박스 혹은 라디오의 선택 범위를 넓게 설정하는 방법 -->
         <!-- 방법1 : input태그와 텍스트 전체를 <label>태그로 감싼다. -->
         <label>
-          <input
-            type="radio"
-            name="rad"
-            value="1"
-            onclick="choiceOne(this.value);"
-          />
+          <input type="radio" name="rad" value="1" onclick="choiceOne(this.value);" />
           운동
         </label>
         <!-- 방법2 : input태그의 id속성과 label태그의 for속성을 일치시켜준다. -->
-        <input
-          type="radio"
-          name="rad"
-          value="2"
-          id="rad_2"
-          onclick="choiceOne(this.value);"
-        />
+        <input type="radio" name="rad" value="2" id="rad_2" onclick="choiceOne(this.value);" />
         <label for="rad_2">공부</label>
       </fieldset>
 
