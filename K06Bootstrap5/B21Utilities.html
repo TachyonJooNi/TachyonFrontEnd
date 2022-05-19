@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B21Utilities.html</title>
+    <link rel="stylesheet" href="./bootstrap5.1.3/css/bootstrap.css" />
+    <script src="bootstrap5.1.3/js/bootstrap.bundle.js"></script>
+    <style>
+      span {
+        display: inline-block;
+        width: 70px;
+        height: 70px;
+        margin: 6px;
+        background-color: #c6d121;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>테두리 설정 및 컬러</h2>
+      <span class="border border-primary"></span>
+      <span class="border border-0 border-secondary"></span>
+      <span class="border border-top-0 border-success"></span>
+      <span class="border border-end-0 border-danger"></span>
+      <span class="border border-bottom-0 border-warning"></span>
+      <span class="border border-start-0 border-info"></span>
+      <br />
+      <!-- 테두리의 방향 : top(상단), bottom(하단), start(좌측), end(우측) -->
+      <span class="border-top"></span>
+      <span class="border-end"></span>
+      <span class="border-bottom"></span>
+      <span class="border-start"></span>
+
+      <h2>테두리 두께</h2>
+      <span class="border border-1"></span>
+      <span class="border border-2"></span>
+      <span class="border border-3"></span>
+      <span class="border border-4"></span>
+      <span class="border border-5"></span>
+
+      <h2>둥근 모서리</h2>
+      <span class="rounded border border-2 border-primary"></span>
+      <span class="rounded-top border border-1 border-info"></span>
+      <span class="rounded-end border border-3 border-success"></span>
+      <span class="rounded-bottom"></span>
+      <span class="rounded-start"></span>
+      <span class="rounded-circle"></span>
+      <span class="rounded-pill" style="width: 130px"></span>
+      <span class="rounded-0"></span>
+      <span class="rounded-1"></span>
+      <span class="rounded-2"></span>
+      <span class="rounded-3"></span>
+
+      <h2>플로팅 속성을 통한 좌/우 정렬</h2>
+      <div class="clearfix">
+        <span class="float-start">Float left</span>
+        <span class="float-end">Float right</span>
+      </div>
+
+      <h2>정렬</h2>
+      <!-- 
+        mx-auto : 블럭엘리먼트의 가운데 정렬시 사용(div, li, p)
+        text-align : 인라인엘리먼트의 가운데 정렬시 사용(a, img, span)
+       -->
+      <div class="mx-auto bg-warning" style="width: 150px">Centered</div>
+      
+      <h2>Spacing - 마진과 패딩</h2>
+        <!-- 
+        {property}{sides}-{size} => {패딩or마진}{방향}-{사이즈(0~5)}
+        or
+        {property}{sides}-{breakpoint}-{size} => {패딩or마진}{방향}-{모니터크기}-{사이즈(0~5)}
+       -->
+        <p><pre>
+        m - margin, 박스 외부의 간격을 설정
+        p - padding, 박스 내부의 간격을 설정
+  
+        t - top, 상단
+        b - bottom, 하단
+        s - left, 좌측
+        e - right, 우측
+        x - left and right 동시적용
+        y - top and bottom 동시적용
+        blank - 아무것도 안쓰면 4방향 모두에 적용된다.
+  
+        사이즈 : 0~5까지 사용할 수 있다. 0~3rem으로 차등 적용된다.
+        em과 rem 단위의 차이
+        : 둘다 웹브라우저에 적용된 기본사이즈에 따라 유연하게 변하는 가변단위이다.
+        em은 단계별 상위요소의 영향을 받는 반면, 
+        rem은 최상위 요소인 html을 기준으로 크기가 결정된다.
+       </pre></p>
+    
+       <style>
+         div#vAlign span{
+           display: inline;
+         }
+       </style>
+       <h2>Vertical Align - 수직방향에서의 정렬</h2>
+       <div id="vAlign" style="height: 100px;" class="border border-3 mb-3">
+        <span class="align-baseline">baseline</span>
+        <span class="align-top">top</span>
+        <span class="align-middle">middle</span>
+        <span class="align-bottom">bottom</span>
+        <span class="align-text-top">text-top</span>
+        <span class="align-text-bottom">text-bottom</span>
+       </div>
+   
+       <h2>동영상 비율</h2>
+       <div class="ratio ratio-16x9">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+   
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script>
+        //jQuery의 Entry Point(진입점)로 문서의 로드가 완료된 후 동작한다. onload와 동일하다.
+        $(function(){
+          //alert("jQuery OK..!!")
+          $('#vOn').click(function(){
+            //alert("vOn버튼 클릭됨");
+            /*
+            jQuery에서 엘리먼트를 선택할때는 CSS3의 Selector(선택자)를 기반으로
+            기술한다. 이벤트를 붙일때는 동일한 명칭의 함수를 사용한다.
+            */
+            $('#showBox').removeClass("invisible");
+            $('#showBox').addClass("visible");
+            $('#showBox').addClass("bg-danger");
+            $('#showBox').addClass("p-5");
+          });
+          $('#vOff').click(function(){
+            /*
+            jQuery에서 함수를 마치 체인처럼 연결해서 호출하는 것을 메서드(함수)체인
+            이라고 한다.
+            */
+            $('#showBox').removeClass("visible").remove("bg-danger")
+              .removeClass("p-5").addClass("invisible");
+          });
+        });
+      </script>
+      <h2>Visibility : 가시성</h2>
+      <div class="visible">I am visible</div>
+      <div class="invisible" id="showBox">I am invisible</div>
+    
+      <p>
+        아래 버튼을 누르면 jQuery를 통해 보임/숨김 처리를 할 수 있습니다.
+      </p>
+      <button type="button" id="vOn">보임처리</button>
+      <button type="button" id="vOff">숨김처리</button>
+
+
+
+
+    </div>
+  </body>
+</html>
