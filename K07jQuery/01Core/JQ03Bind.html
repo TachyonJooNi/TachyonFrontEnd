@@ -35,9 +35,9 @@
           alert("버튼 클릭됨");
         });
         //이벤트제거 버튼을 클릭하면..
-        $("btnEventClear").bind("click", function () {
+        $("#btnEventClear").bind("click", function () {
           //btnClick에 부여되었던 click이벤트가 제거된다.
-          $("btnClick").unbind("click");
+          $("#btnClick").unbind("click");
           alert("#btnClick의 이벤트가 제거됨");
         });
       });

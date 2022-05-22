@@ -19,8 +19,8 @@
       */
       $(function () {
         //문서가 로드되면 즉시 2초동안 숨김처리된다.
-        $("#title").hide(2000);
-        $("#content").hide(2000);
+        $("#title").hide();
+        $("#content").hide();
 
         //아래는 모두 버튼을 클릭했을때 동작한다.
         $("#btn1").click(function () {
@@ -39,7 +39,7 @@
           $("#content").show(2000);
         });
         $("#btn2_h").click(function () {
-          $("#content").hide(1000);
+          $("#content").slideUp(1000);
         });
       });
     </script>
