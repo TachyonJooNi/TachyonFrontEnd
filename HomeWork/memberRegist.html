@@ -114,10 +114,8 @@
           alert("전화번호를 입력하세요");
           return false;
         }
-        // 8~16자의 영문과 숫자만 가능합니다.
-        else if (
-          !(8 < form.userid.value.length && form.userid.value.length < 16)
-        ) {
+
+        if (!(8 < form.userid.value.length && form.userid.value.length < 16)) {
           alert("아이디는 8~16자만 가능합니다");
           form.userid.focus();
           return false;
