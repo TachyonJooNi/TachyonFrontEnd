@@ -150,10 +150,13 @@
         }
 
         for (var i = 0; i < form.pass1.value.length; i++) {
+          var numcount,
+            charcount,
+            sybolcount = 0;
           if (
             !(
-              form.pass1.value[i].charCodeAt(0) >= 33 &&
-              form.pass1.value[i].charCodeAt(0) <= 126
+              form.pass1.value[i].charCodeAt(0) >= 48 &&
+              form.pass1.value[i].charCodeAt(0) <= 57
             )
           ) {
             alert("비밀번호는 영문/숫자/특수문자 조합만 가능합니다");
